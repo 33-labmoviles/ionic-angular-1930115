@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tab1',
@@ -36,4 +36,19 @@ export class Tab1Page {
       "matricula": "1930238"
     }
   ];
+
+  @Input() nombre: string = "";
+  @Input() apellido: string = "";
+  @Input() matricula: string = "";
+
+
+  agregarAlumno(): void{
+
+    var nuevoAlumno: any = {
+      "nombre": this.nombre,
+      "apellido": this.apellido,
+      "matricula": this.matricula
+    }
+    this.alumnos.push(nuevoAlumno);
+  }
 }
