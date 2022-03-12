@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Alumnos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let alumno of alumnos" [routerLink]="['/alumno-detalle',alumno.matricula]">
+      <ion-img src="{{alumno.image}}" width ="20px"></ion-img>
+      <ion-label>{{alumno.nombre}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

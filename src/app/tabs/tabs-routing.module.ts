@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AlumnoDetalleComponent } from '../alumno-detalle/alumno-detalle.component';
+import { AlumnoDetalleComponentModule } from '../alumno-detalle/alumno-detalle.component.module';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -30,6 +32,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
+  },
+  {
+    path: 'alumno-detalle',
+    component: AlumnoDetalleComponentModule
   }
 ];
 

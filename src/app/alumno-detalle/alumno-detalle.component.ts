@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-alumno-detalle',
+  templateUrl: './alumno-detalle.component.html',
+  styleUrls: ['./alumno-detalle.component.scss'],
 })
-export class Tab2Page {
+export class AlumnoDetalleComponent implements OnInit {
 
-  constructor() {}
+  constructor(private ruta: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.obtenerDetalleAlumno(this.matricula);
+  }
 
   alumnos = [
     {
@@ -41,5 +46,18 @@ export class Tab2Page {
       "image": "assets/loguito.jpg"
     }
   ];
-  
+
+  alumnoDetalle:any = {}
+  matricula: string = this.ruta.snapshot.params.id;
+  obtenerDetalleAlumno(matricula): any{
+    console.log(matricula);
+
+for(let i=0; i<this.alumnos.length;i++){
+  if(matricula==this.alumnos[i].matricula)
+  this.alumnoDetalle=matricula;
+}
+
+    return this.alumnoDetalle;
+  }
+
 }
