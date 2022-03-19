@@ -47,15 +47,16 @@ export class AlumnoDetalleComponent implements OnInit {
     }
   ];
 
-  alumnoDetalle:any = {}
+  alumnoDetalle:  any={};
   matricula: string = this.ruta.snapshot.params.id;
-  obtenerDetalleAlumno(matricula): any{
+  obtenerDetalleAlumno(matricula: string): any{
     console.log(matricula);
 
-for(let i=0; i<this.alumnos.length;i++){
-  if(matricula==this.alumnos[i].matricula)
-  this.alumnoDetalle=matricula;
-}
+  for(let i=0; i<this.alumnos.length;i++){
+    if(matricula==this.alumnos[i].matricula){
+      this.alumnoDetalle=this.alumnos[i];
+      }
+    }
 
     return this.alumnoDetalle;
   }

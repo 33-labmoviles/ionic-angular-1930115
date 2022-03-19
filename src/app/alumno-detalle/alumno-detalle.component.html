@@ -1,3 +1,8 @@
-<p>
-  {{alumno.matricula}}
-</p>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{alumnoDetalle.nombre}} {{alumnoDetalle.apellido}}</ion-card-title>
+    <ion-card-subtiltle>Matrícula: {{alumnoDetalle.matricula}}</ion-card-subtiltle>
+  </ion-card-header>
+  <ion-card-content><img src="{{alumnoDetalle.image}}" width ="150px" height="150px"></ion-card-content>
+</ion-card>
+  

@@ -8,4 +8,4 @@ import { AlumnoDetalleComponent } from './alumno-detalle.component';
   declarations: [AlumnoDetalleComponent],
   exports: [AlumnoDetalleComponent]
 })
-export class AlumnoDetalleComponentModule {}
+export class ListaComponentModule {}
