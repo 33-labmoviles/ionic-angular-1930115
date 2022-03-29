@@ -4,5 +4,13 @@
     <ion-card-subtiltle>Matrícula: {{alumnoDetalle.matricula}}</ion-card-subtiltle>
   </ion-card-header>
   <ion-card-content><img src="{{alumnoDetalle.image}}" width ="150px" height="150px"></ion-card-content>
+  <ion-button href = "http://localhost:4200/tabs/tab2">
+    Volver
+  </ion-button>
+  <ion-button (click)="mostrarActionSheet()">
+    Mostrar Action Sheet
+  </ion-button>
 </ion-card>
+
+
   
