@@ -1,54 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  alumnos = [
-    {
-      "nombre": "Brian",
-      "apellido": "Esquivel",
-      "matricula": "1930115"
-    },
-    {
-      "nombre": "Omar",
-      "apellido": "Garza",
-      "matricula": "1928432"
-    },
-    {
-      "nombre": "Sergio",
-      "apellido": "Gutiérrez",
-      "matricula": "1929456"
-    },
-    {
-      "nombre": "Diego",
-      "apellido": "Jasso",
-      "matricula": "1930103"
-    },
-    {
-      "nombre": "Ángel",
-      "apellido": "Rodríguez",
-      "matricula": "1930238"
-    }
-  ];
+  ngOnInit(): void {
+    this.getAlumnos();
+  }
 
-  @Input() nombre: string = "";
-  @Input() apellido: string = "";
-  @Input() matricula: string = "";
+  alumnos: any = [];
 
-
-  agregarAlumno(): void{
-
-    var nuevoAlumno: any = {
-      "nombre": this.nombre,
-      "apellido": this.apellido,
-      "matricula": this.matricula
-    }
-    this.alumnos.push(nuevoAlumno);
+  getAlumnos(){
+  return this.http.get('https://alumnos33-4dcfd-default-rtdb.firebaseio.com/alumnos.json').subscribe(res=>{
+    this.alumnos = res;
+  })
   }
 }

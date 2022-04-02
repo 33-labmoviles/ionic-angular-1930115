@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Agregar Alumno
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,37 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <form #agregarAlumno = "ngForm" (ngSubmit) = "onSubmit(agregarAlumno)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2">
+          Nombre:
+        </ion-col>
+        <ion-col size="10">
+          <ion-input placeholder="Juanito" [(ngModel)]="nombre" name="nombre"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2">
+         Apellido:
+        </ion-col>
+        <ion-col size="10">
+          <ion-input placeholder="Pérez" [(ngModel)]="apellido" name="apellido"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2">
+          Matrícula:
+        </ion-col>
+        <ion-col size="10">
+          <ion-input placeholder="1930421" [(ngModel)]="matricula" name="matricula"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button type = "Submit">Agregar Alumno</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

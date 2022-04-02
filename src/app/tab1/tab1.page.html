@@ -14,38 +14,6 @@
     </ion-header>
   
   <ion-grid>
-    <ion-row>
-      <ion-col size="2">
-        Nombre:
-      </ion-col>
-      <ion-col size="10">
-        <ion-input placeholder="Juanito" [(ngModel)]="nombre"></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="2">
-       Apellido:
-      </ion-col>
-      <ion-col size="10">
-        <ion-input placeholder="Pérez" [(ngModel)]="apellido"></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="2">
-        Matrícula:
-      </ion-col>
-      <ion-col size="10">
-        <ion-input placeholder="1930421" [(ngModel)]="matricula"></ion-input>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button (click)="agregarAlumno()">Agregar Alumno</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  
-  <ion-grid>
     <ion-row  *ngFor="let alumno of alumnos">
      <ion-col>
       <ion-card>
