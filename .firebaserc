@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "alumnos33-4dcfd": {
+      "hosting": {
+        "app": [
+          "alumnos33-4dcfd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "alumnos33-4dcfd"
+  }
+}

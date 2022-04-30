@@ -1,24 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {DbService} from '../services/service.service';
+
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page implements OnInit {
+export class Tab2Page {
+  
+  alumnos: Object;
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {
-    this.getAlumnos();
-  }
-
-  alumnos: any = [];
-
-  getAlumnos(){
-  return this.http.get('https://alumnos33-4dcfd-default-rtdb.firebaseio.com/alumnos.json').subscribe(res=>{
-    this.alumnos = res;
-  })
+  constructor(private http: HttpClient, private db: DbService) {}
+  ngOnInit(): void{
+    this.db.getAlumnos().subscribe(data=>{this.alumnos=data;});
   }
 }
