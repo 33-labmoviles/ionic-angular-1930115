@@ -9,5 +9,16 @@ export const environment = {
     messagingSenderId: '807842096238',
     measurementId: 'G-1H63FX6FWD',
   },
-  production: true
-};
+  production: true,
+
+  firebaseConfig : {
+    apiKey: "AIzaSyCJfeEqWfD_5YtXrAiJfJZkLlkirYK-RPo",
+    authDomain: "alumnos33-4dcfd.firebaseapp.com",
+    projectId: "alumnos33-4dcfd",
+    storageBucket: "alumnos33-4dcfd.appspot.com",
+    messagingSenderId: "807842096238",
+    appId: "1:807842096238:web:72d00a2482e4ba81bef27f",
+    measurementId: "G-1H63FX6FWD"}
+  };
+
+

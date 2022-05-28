@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListaComponentModule } from '../alumno-detalle/alumno-detalle.component.module';
 import { TabsPage } from './tabs.page';
+import { AlumnosComponentModule } from '../alumnos/alumnos.component.module';
 
 const routes: Routes = [
   {
@@ -33,8 +33,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'alumno-detalle',
-    component: ListaComponentModule
+    path: 'alumno.detalle',
+    component: AlumnosComponentModule
   }
 ];
 

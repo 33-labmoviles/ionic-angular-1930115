@@ -14,7 +14,7 @@
     </ion-header>
   
   <ion-grid>
-    <ion-row  *ngFor="let alumno of alumnos">
+    <ion-row  *ngFor="let alumno of alumnoslista">
      <ion-col>
       <ion-card>
         <ion-card-content>
@@ -37,7 +37,7 @@
                 </ion-grid>
               </ion-col>
               <ion-col class="alumno-foto">
-                <img src="assets/loguito.jpg" alt="" width="150px">
+                <img src="{{alumno.imagen}}" alt="" width="150px">
               </ion-col>
             </ion-row>
            

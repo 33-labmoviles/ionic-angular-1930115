@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ListaComponent } from './lista.component';
+import { AlumnosComponent } from './alumnos.component';
 @NgModule({
   imports: [ CommonModule, FormsModule, IonicModule],
-  declarations: [ListaComponent],
-  exports: [ListaComponent]
+  declarations: [AlumnosComponent],
+  exports: [AlumnosComponent]
 })
-export class ListaComponentModule {}
+export class AlumnosComponentModule {}

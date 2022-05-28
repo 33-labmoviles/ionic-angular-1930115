@@ -16,6 +16,7 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
     Tab2PageRoutingModule,
+    RouterModule
   ],
   declarations: [Tab2Page]
 })

@@ -1,33 +1,40 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, NgForm, NgModel } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { Component, Input , Output, EventEmitter, OnChanges, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DbService } from '../services/service.service';
+import { Database, set, ref, update, getDatabase } from 'firebase/database';
 
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page implements OnInit {
 
-  alumno : {
-    nombre: "";
-    apellido: "";
-    matricula: "";
+  constructor() {}
+
+  ngOnInit(): void {
   }
- 
-  alumno = new FormGroup(){
-    nombreAlumno: new FormControl(''),
-    apellido: new FormControl(''),
-    matricula: new FormControl('')
-  }
-
-  constructor(private http: HttpClient, private Db: DbService) {}
-
-  onSubmit(agregarAlumno:NgForm){
-    this.Db.postAlumno(this.alumno).subscribe(res=>{
-      console.log("Se agregó el alumno con éxito");
-    })
+  onSubmit(agregarAlumno: NgForm){
+    const db = getDatabase();
+    set(ref(db, 'alumnos/'+ this.matricula),{
+      "nombre": this.nombre,
+      "apellido": this.apellido,
+      "matricula": this.matricula,
+      "imagen": "assets/loguito.jpg"
+    });
+    window.location.reload();
+    this.clear();
   }
 
+  @Input() nombre: string = "";
+  @Input() apellido: string = "";
+  @Input() matricula: string = "";
+
+    nuevoAlumno: any = {};
+
+    clear(){
+      this.nombre = "";
+      this.apellido = "";
+      this.matricula = "";
+    }
 }
